@@ -19,8 +19,11 @@ import { PaqueteService } from './paquetes/paquete.service';
 // rutas
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+
 const routes: Routes = [
-  {path: '', redirectTo: '/paquetes', pathMatch: 'full'},
+  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: 'welcome', component: WelcomeComponent},
   {path: 'weekends', component: WeekendRidesComponent},
   {path: 'paquetes', component: PaquetesComponent},
   {path: 'login', component: LoginComponent}
@@ -33,7 +36,8 @@ const routes: Routes = [
     FooterComponent,
     WeekendRidesComponent,
     PaquetesComponent,
-    LoginComponent
+    LoginComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

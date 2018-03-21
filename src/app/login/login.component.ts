@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
   public title: string = 'ACCESO';
 
   public user: LoginReques;
-  public token;
-  public status: number = -1;
 
   constructor(
     private _route: ActivatedRoute,
@@ -35,12 +33,11 @@ export class LoginComponent implements OnInit {
   onSubmit(){
     this._userService.login(this.user).subscribe(
       response =>{
-        this.status = response.status;
         if (response.status == 0) {
           swal('LOGIN', `Weelcome`, 'success');
           localStorage.setItem('identity', JSON.stringify(response.data));
           localStorage.setItem('token', JSON.stringify(response.data.token));
-          this._router.navigate(['/']);
+          this._router.navigate(['/welcome']);
         }else{
           swal('LOGIN', `Usuario y/o Contraseña Inválida`, 'info');
           console.log(response);
