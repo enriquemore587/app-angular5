@@ -1,0 +1,26 @@
+<div  class="container">
+  <div class="card border-primary mb-3 my-3"><!-- style="max-width: 18rem;"-->
+    <div class="card-header">PAQUETES</div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Listado de paquetes</h5>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <th>id</th>
+          <th>nombre</th>
+          <th>descripcion</th>
+          <th>terminosCondiciones</th>
+          <th>precio</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let paquete of paquetes">
+            <td>{{ paquete.id_package }}</td>
+            <td>{{ paquete.name_package }}</td>
+            <td>{{ paquete.description }}</td>
+            <td>{{ paquete.terms }}</td>
+            <td>{{ paquete.cost }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

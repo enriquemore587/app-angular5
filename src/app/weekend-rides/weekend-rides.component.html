@@ -1,0 +1,15 @@
+<div class="container">
+  <button type="button" (click)="setHabilitar()" class="btn btn-primary my-3" name="button">
+    {{ habilitar? 'OCULTAR': 'MOSTRAR' }}
+  </button>
+  <div class="card">
+    <div class="card-header">
+      LISTADO DE WEEKENDRIDES
+    </div>
+    <ul class="list-group" *ngIf="habilitar">
+      <li class="list-group-item" *ngFor="let w of listaWeekends">
+        {{ w }}
+      </li>
+    </ul>
+  </div>
+</div>
